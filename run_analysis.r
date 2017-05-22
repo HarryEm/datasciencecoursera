@@ -41,4 +41,4 @@ total <- join(total2,activity_labels,by='activity_number')
 ## summarise by subject and activity and write to working directory
 
 summary <- total %>% group_by(subject, activity) %>% summarise_each(funs(mean))
-write.csv(summary, file = "weekfoursummary.csv")
+write.table(summary, file = "weekfoursummary.txt",row.name=FALSE)
